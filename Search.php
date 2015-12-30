@@ -1,10 +1,9 @@
-<meta charset="UTF-8">
 <?php
 $kw = $_POST["kw"];
 
 
 function queryToUrl($query, $start=null, $perPage=100, $country="US") {
-    return "http://www.google.com.hk/search?" . http_build_query(array(
+    return "http://www.google.com.hk/?gws_rd=cr,ssl&search?" . http_build_query(array(
         // Query
         "q"     => $query,
         // Country (geolocation presumably)
@@ -29,8 +28,11 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
 $response = curl_exec($ch);
 
-echo str_replace("/url?q=", "", $response) ;
+//$response = str_replace("/url?q=", "",str_replace("sa=U","",preg_replace("/sa=U[^>]+\">/", "\">", $response)));
+$response = str_replace("<a", "<a target=\"blank\"",str_replace("/url?q=", "",preg_replace("/&[^>]+\">/", "\">", $response))); 
 
+//echo str_replace("/url?q=", "", $response) ;
+echo  $response;
 
 
 ?>
