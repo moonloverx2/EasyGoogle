@@ -3,7 +3,7 @@ $kw = $_POST["kw"];
 
 
 function queryToUrl($query, $start=null, $perPage=100, $country="US") {
-    return "http://www.google.com.hk/?gws_rd=cr,ssl&search?" . http_build_query(array(
+    return "http://www.google.com.hk/search?" . http_build_query(array(
         // Query
         "q"     => $query,
         // Country (geolocation presumably)
