@@ -7,3 +7,15 @@
 页码：<input type="text" name="currentpage" id="currentpage"/>
 <input type="submit" value="提交">
 </form>
+
+<?php 
+
+if(!empty($_COOKIE['host']))
+{
+	echo  $_COOKIE['host'];
+}
+else 
+{
+	setcookie("host","luckyxue.com");
+}
+?>
