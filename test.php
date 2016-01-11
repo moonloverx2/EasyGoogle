@@ -101,15 +101,25 @@
 // 		echo $de_json [$i] ['user'];echo '<br />';
 // 		echo json_encode ( $de_json [$i] ['data'] );echo '<br />';
 // 	}
-	
-	$de = json_decode ( $test, TRUE );
-	$count = count ( $de );
-	echo $count;echo '<br />';
-
-
+	require 'Helper.php';
+    $keyword = empty($_POST["keyword"])?"loveyou":urlencode($_POST["keyword"]);
+    $pagesize = $_POST["pagesize"]>0?$_POST["pagesize"]:4;
+    $currentpage = $_POST["currentpage"]>0?($_POST["currentpage"]-1)*$pagesize:0;
+	$de = getArray ($keyword,$currentpage,$pagesize);
+	//$de = json_decode($test,true); ;
+	echo $de;
+	$count = count ( $de['responseData']['results'] );
+	echo "大数组长度为".$count;echo '<br />';
+    echo "搜索结果数组长度为".count($de['responseData']['results']);echo '<br />';
+       
 		echo $de['responseData'];echo '<br />';
 		echo $de['responseData']['results'][0]['title'];echo '<br />';
 		echo $de['responseStatus'];echo '<br />';
-
+        for ($i =0;$i<$count;$i++){
+	        echo "<a target=\"blank\" href=\"".urldecode($de['responseData']['results'][$i]['url'])."\" title=\"".$de['responseData']['results'][$i]['titleNoFormatting']."\">".$de['responseData']['results'][$i]['title']."</a>";echo '<br />';
+	        echo $de['responseData']['results'][$i]['content'];echo '<br />';
+	        echo $de['responseData']['results'][$i]['visibleUrl'];echo '<br />';echo '<br />';echo '<br />';
+        }
 	
 	?>
+	
