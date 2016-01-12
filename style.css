@@ -1,0 +1,10 @@
+@charset "utf-8";
+body{padding:0px; margin:0px auto;-webkit-text-size-adjust:none;color:#3d3d3d;background-color: #888888;}
+ul, li,form, fieldset, legend, button, input, textarea, th, td,img,h2{margin:0 auto; padding:0;}
+body,button, input, select, textarea {font: 12px/1.5 '宋体',tahoma, Srial, helvetica, sans-serif; }
+ul, ol { list-style: none; }
+table{padding:0px; margin:0px auto;text-align:center;}
+img{border:none;}
+a { text-decoration: none; color:#4c4c4c;}
+a:hover {text-decoration: none; color:#e43a3d;}
+.clear{ clear:both;}
