@@ -1,38 +1,15 @@
-<?php
-$kw = $_POST["kw"];
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>EasyGoogle</title>
 
-
-function queryToUrl($query, $start=null, $perPage=100, $country="US") {
-    return "http://www.google.com.hk/search?" . http_build_query(array(
-        // Query
-        "q"     => $query,
-        // Country (geolocation presumably)
-       // "gl"    => $country,
-        // Start offset
-        "start" => $start,
-        // Number of result to a page
-        "num"   => $perPage,
-        "hl"=>"zh-cn"
-    ), true);
-}
-
-// Find first 100 result for "pizza" in Canada
-$ch = curl_init(queryToUrl($kw, 0, 15, "CA"));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla 5.0");
-curl_setopt($ch, CURLOPT_MAXREDIRS,      4);
-curl_setopt($ch, CURLOPT_TIMEOUT,        5);
-curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-
-$response = curl_exec($ch);
-
-//$response = str_replace("/url?q=", "",str_replace("sa=U","",preg_replace("/sa=U[^>]+\">/", "\">", $response)));
-$response = str_replace("<a", "<a target=\"blank\"",str_replace("/url?q=", "",preg_replace("/&[^>]+\">/", "\">", $response))); 
-
-//echo str_replace("/url?q=", "", $response) ;
-echo  $response;
-
-
-?>
+  </head>
+  <body>
+    <div class="g_searchcontrol">
+    <div><img class="g_logo" src="logo.png"/></div>
+    <div><input type="text" class="g_kwinput" id="keywords" name="keywords"/><input type="submit" class="g_submit" value="Google搜索"/></div>
+    </div>
+  </body>
+</html>
