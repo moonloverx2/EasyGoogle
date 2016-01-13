@@ -4,15 +4,24 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link href="CSS/style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="Images/icon.png" />
-    <title>EasyGoogle</title>
+    <title>关键字</title>
 
   </head>
   <body>
-  <div class="g_head"></div>
-    <div class="g_searchcontrol">
+  <div class="l_head">
+  <img class="l_logo" src="Images/logo.png"/>
+  <div class="l_serchdiv">
+  <input type="text" class="g_kwinput" id="keywords" name="keywords"/>
+  <input type="submit" class="g_submit" value="Google搜索"/>
+  </div>
+  </div>
+    <div class="l_result">
     
-    <div><img class="g_logo" src="Images/logo.png"/></div>
-    <div class="g_serchdiv"><input type="text" class="g_kwinput" id="keywords" name="keywords"/><input type="submit" class="g_submit" value="Google搜索"/></div>
+    <div class="l_left">
+    
+    </div>
+    
+    <div class="l_right"></div>    
     </div>
     <div class="g_bottom"><a href="#" onclick="javascript:alert('帮助大家提供google搜索。')">关于搜索</a>&nbsp;|&nbsp;<a>意见反馈</a>&nbsp;|&nbsp;E-Mail: MoonLoverX2@163.com</div>
   </body>
