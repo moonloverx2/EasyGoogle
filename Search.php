@@ -14,6 +14,8 @@
     <div><img class="g_logo" src="Images/logo.png"/></div>
     <div class="g_serchdiv"><input type="text" class="g_kwinput" id="keywords" name="keywords"/><input type="submit" class="g_submit" value="Google搜索"/></div>
     </div>
-    <div class="g_bottom"><a href="#" onclick="javascript:alert('帮助大家提供google搜索。')">关于搜索</a>&nbsp;|&nbsp;<a>意见反馈</a>&nbsp;|&nbsp;E-Mail: MoonLoverX2@163.com</div>
+        <?php 
+    require_once 'Template/footer.html';
+    ?>
   </body>
 </html>
