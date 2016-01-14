@@ -14,7 +14,7 @@ b{color:red;font-weight:normal}
 .g_head{height:30px;background-color: #333;margin-top: 10px;}
 .g_searchcontrol{width:100%;text-align: center;margin-left: auto;margin-right: auto;margin-top:160px;}
 .g_kwinput{width:521px;height: 20px; font-size:16px; border: 1px,solid;line-height: 20px; padding: 7px 9px 12px 7px;}
-.g_submit{height: 42px;width:80px;}
+.g_submit{height: 42px;width:80px;margin-left:-5px;}
 .g_serchdiv{margin-top: 20px;}
 .g_logo{height: 96px;width: 535px;}
 .g_bottom{position:absolute; bottom:0; width:100%; height:40px; background: #f2f2f2;float:right; text-align:center; line-height:40px}
