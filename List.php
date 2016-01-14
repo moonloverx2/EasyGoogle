@@ -18,30 +18,37 @@
     <div class="l_result">
     
     <div class="l_left">
-    <div class="result_content">
-    查询结果(124000) 用时0.0124s
+    
+    <?php 
+    require 'Helper.php';
+
+	$de = getArray (urlencode("手机"),0,8);
+    $count = count($de['responseData']['results']);
+?>
+    <div class="r_count">
+         找到约 <?php echo $de['responseData']['cursor']['resultCount'];?> 条结果 （用时 <?php echo $de['responseData']['cursor']['searchResultTime'];?> 秒）
     </div>
-    <div class="result_content">
-    <span>薛建东,有多少薛建东,薛建东同名同姓-人人网 人人无线</span>
-    <div>全国有多少薛建东?薛建东都来自哪儿,是男生还是女生?薛建东姓名的五行八字得分如何?查找和结识同名同姓的薛建东, 了解薛建东姓名吉凶,从人人网 校内开始。</div>
-    <span>tieba.baidu.com/f?kw=薛建东</span>
-    </div>
-    <div class="result_content">
-    <span>薛建东,有多少薛建东,薛建东同名同姓-人人网 人人无线</span>
-    <div>全国有多少薛建东?薛建东都来自哪儿,是男生还是女生?薛建东姓名的五行八字得分如何?查找和结识同名同姓的薛建东, 了解薛建东姓名吉凶,从人人网 校内开始。</div>
-    <span>tieba.baidu.com/f?kw=薛建东</span>
-    </div>
-    <div class="result_content">
-    <span>薛建东,有多少薛建东,薛建东同名同姓-人人网 人人无线</span>
-    <div>全国有多少薛建东?薛建东都来自哪儿,是男生还是女生?薛建东姓名的五行八字得分如何?查找和结识同名同姓的薛建东, 了解薛建东姓名吉凶,从人人网 校内开始。</div>
-    <span>tieba.baidu.com/f?kw=薛建东</span>
-    </div>
+<?php 
+        for ($i =0;$i<$count;$i++){
+        	echo "<div class=\"r_content\">";
+	        echo "<span class=\"r_title\"><a target=\"blank\" href=\"".urldecode($de['responseData']['results'][$i]['url'])."\" title=\"".$de['responseData']['results'][$i]['titleNoFormatting']."\">".strip_tags($de['responseData']['results'][$i]['title'])."</a></span>";
+	        echo "<div class=\"r_url\">".$de['responseData']['results'][$i]['url']."</div>";
+	        echo "<div>".$de['responseData']['results'][$i]['content']."</div>";
+	        
+	        echo "</div>";
+        }
+	
+	?>
+<div class="f_page">1\2\3\4\5</div> 
     </div>
     
-    <div class="l_right"></div>    
+    <div class="l_right"></div> 
+      
     </div>
+    <div class="l_bottom">
     <?php 
     require_once 'Template/footer.html';
     ?>
+    </div>
   </body>
 </html>

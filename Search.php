@@ -14,8 +14,10 @@
     <div><img class="g_logo" src="Images/logo.png"/></div>
     <div class="g_serchdiv"><input type="text" class="g_kwinput" id="keywords" name="keywords"/><input type="submit" class="g_submit" value="Google搜索"/></div>
     </div>
+    <div class="g_bottom">
         <?php 
     require_once 'Template/footer.html';
     ?>
+    </div>
   </body>
 </html>
