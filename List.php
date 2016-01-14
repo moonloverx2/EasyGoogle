@@ -22,7 +22,7 @@
     <?php 
     require 'Helper.php';
 
-	$de = getArray (urlencode("手机"),0,8);
+	$de = getArray (urlencode("架构师"),0,8);
     $count = count($de['responseData']['results']);
 ?>
     <div class="r_count">
@@ -32,14 +32,20 @@
         for ($i =0;$i<$count;$i++){
         	echo "<div class=\"r_content\">";
 	        echo "<span class=\"r_title\"><a target=\"blank\" href=\"".urldecode($de['responseData']['results'][$i]['url'])."\" title=\"".$de['responseData']['results'][$i]['titleNoFormatting']."\">".strip_tags($de['responseData']['results'][$i]['title'])."</a></span>";
-	        echo "<div class=\"r_url\">".$de['responseData']['results'][$i]['url']."</div>";
+	        echo "<div class=\"r_url\">".urldecode($de['responseData']['results'][$i]['url'])."</div>";
 	        echo "<div>".$de['responseData']['results'][$i]['content']."</div>";
 	        
 	        echo "</div>";
         }
 	
 	?>
-<div class="f_page">1\2\3\4\5</div> 
+  <div class="f_page">
+  <table class="f_table">
+  <tr>
+  <td class="f_chosed">1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+  </tr>
+  </table>
+  </div> 
     </div>
     
     <div class="l_right"></div> 
