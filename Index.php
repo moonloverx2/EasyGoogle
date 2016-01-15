@@ -14,7 +14,7 @@
     <div class="g_searchcontrol">
     
     <div><img class="g_logo" src="Images/logo.png"/></div>
-    <form action="Search.php" method="post">
+    <form action="Search.php" method="get">
     <div class="g_serchdiv">
     <input type="text" class="g_kwinput" id="keyword" name="keyword"/>
     <input type="submit" class="g_submit" value="Google搜索"/> 
