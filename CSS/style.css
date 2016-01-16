@@ -32,7 +32,7 @@ b{color:red;font-weight:normal}
 .r_content{ margin-bottom: 25px;}
 .r_title{display: block;overflow: hidden;text-overflow: ellipsis; -webkit-text-overflow: ellipsis; white-space: nowrap;color:blue;font-weight:normal;}
 .r_title a{color:blue;font-size:18px;}
-.r_url{line-height: 16px;color: #008000;margin-top:1px;}
+.r_url{line-height: 16px;color: #008000;margin-top:1px;overflow: hidden;}
 .r_count{margin-top:5px;margin-bottom:15px;}
 
 
