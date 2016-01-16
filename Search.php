@@ -6,7 +6,12 @@
     $currentpage = $_GET["currentpage"]>0?($_GET["currentpage"]-1):0;
 	 $de = getArray ($keyword,$currentpage*$pagesize,$pagesize);
     $count = count($de['responseData']['results']);
-?>
+    
+   if(!empty($_COOKIE['host']))
+   {
+	//echo  $_COOKIE['host'];
+
+   ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -15,7 +20,7 @@
     <script src="jquery-1.9.1.min.js"></script>
     <script >
        $(function(){
-              $("#<?php echo $currentpage;?>").css("color","black"); 
+              $("#<?php echo $currentpage+1;?>").css("color","black"); 
            });
     </script>
     <link rel="shortcut icon" type="image/x-icon" href="Images/icon.png" />
@@ -55,9 +60,10 @@
   <table class="f_table">
   <tr>
   <?php 
-  for($k=0;$k<count($de['responseData']['cursor']['pages']);$k++)
+
+  for($k=1;$k<9;$k++)
   {
-  	echo "<td ><a id=".$k." href=\"Search.php?keyword=".$keyword."&currentpage=".$de['responseData']['cursor']['pages'][$k]['label']."\">".$de['responseData']['cursor']['pages'][$k]['label']."</a></td>";
+  	echo "<td ><a id=".$k." href=\"Search.php?keyword=".$keyword."&currentpage=".$k."\">".$k."</a></td>";
   }
   ?>
 <!--   <td class="f_chosed">1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td> -->
@@ -76,3 +82,11 @@
     </div>
   </body>
 </html>
+   <?php 
+   }
+   else 
+   {
+	 setcookie("host","luckyxue.com");
+	 echo "404";
+   }
+?>
