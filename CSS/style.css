@@ -37,7 +37,8 @@ b{color:red;font-weight:normal}
 
 
 .f_page{width:100%; height:80px;float:left;text-align: center;}
-.f_table{width:50%;color:#4285f4;font-weight: normal;margin-top:10px;font-size:14px;}
+.f_table{width:50%;font-weight: normal;margin-top:10px;font-size:14px;}
+.f_table a{color:#4285f4;}
 .f_chosed{color:black;}
 
 
