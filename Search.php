@@ -29,7 +29,7 @@
   </head>
   <body>
   <div class="l_head">
-  <a href="/"><img class="l_logo" src="Images/logo.png"/></a>
+  <a href="/"><img class="l_logo" src="Images/logo_l.png"/></a>
   <form action="Search.php" method="get">
   <div class="l_serchdiv">
   <input type="text" class="l_kwinput" id="keyword" name="keyword" value="<?php echo urldecode($keyword);?>"/>
