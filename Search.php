@@ -16,6 +16,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Google,EasyGoogle,谷歌地址,能访问google" />
+    <meta name="description" content="国内访问google,帮助大家访问google。http://google.luckyxue.com/。" />
     <link href="CSS/style.css" rel="stylesheet" type="text/css" />
     <script src="jquery-1.9.1.min.js"></script>
     <script >
