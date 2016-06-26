@@ -7,6 +7,20 @@
     <link href="CSS/style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="Images/icon.png" />
     <title>EasyGoogle</title>
+    <script type="text/javascript" src="Js/Base64.js"></script>
+    <script type="text/javascript" src="Js/jquery.1.7.2.js"></script>
+    <script>
+
+    function check()
+     {
+          var b = new Base64();  
+        var str = b.encode($("#key").val());  
+        alert(str);
+        $("#keyword").val(str);
+        return true;
+        }
+    
+    </script>
 
   </head>
   <body>
@@ -14,29 +28,31 @@
     <div class="g_searchcontrol">
     
     <div><img class="g_logo" src="Images/logo.png"/></div>
-    <form action="Search.php" method="get">
+    <form action="Search.php" method="get" onsubmit="return check()">
     <div class="g_serchdiv">
-    <input type="text" class="g_kwinput" id="keyword" name="keyword"/>
-    <input type="submit" class="g_submit" value="Google搜索"/> 
+    <input type="text" class="g_kwinput" id="key" name="key"/>
+    <input type="hidden" class="g_kwinput" id="keyword" name="keyword"/>
+    <input type="submit" class="g_submit" value="Google搜索"/>
     </div>
     </form>
     </div>
     <div class="g_bottom">
-        <?php 
+        <?php
     require_once 'Template/footer.html';
     ?>
     </div>
   </body>
 </html>
 
-<?php 
+<?php
 
 if(!empty($_COOKIE['host']))
 {
-	//echo  $_COOKIE['host'];
+    //echo  $_COOKIE['host'];
 }
-else 
+else
 {
-	setcookie("host","luckyxue.com");
+    setcookie("host","luckyxue.com");
 }
 ?>
+

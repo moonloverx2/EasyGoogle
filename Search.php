@@ -1,6 +1,6 @@
     <?php 
     require 'Helper.php';
-    $keyword = empty($_GET["keyword"])?"EasyGoogle":urlencode($_GET["keyword"]);
+    $keyword = empty($_GET["keyword"])?"EasyGoogle":base64_decode(urlencode($_GET["keyword"]));
     //$pagesize = $_POST["pagesize"]>0?$_POST["pagesize"]:8;
     $pagesize = 8;
     $currentpage = $_GET["currentpage"]>0?($_GET["currentpage"]-1):0;
@@ -27,14 +27,28 @@
     </script>
     <link rel="shortcut icon" type="image/x-icon" href="Images/icon.png" />
     <title><?php echo urldecode($keyword);?>_EasyGoogle</title>
+    <script type="text/javascript" src="Js/Base64.js"></script>
+    <script type="text/javascript" src="Js/jquery.1.7.2.js"></script>
+    <script>
 
+    function check()
+     {
+        var b = new Base64();  
+        var str = b.encode($("#key").val());  
+        alert(str);
+        $("#keyword").val(str);
+        return true;
+        }
+    
+    </script>
   </head>
   <body>
   <div class="l_head">
   <a href="/"><img class="l_logo" src="Images/logo_l.png"/></a>
-  <form action="Search.php" method="get">
+  <form action="Search.php" method="get" onsubmit="return check()">
   <div class="l_serchdiv">
-  <input type="text" class="l_kwinput" id="keyword" name="keyword" value="<?php echo urldecode($keyword);?>"/>
+  <input type="text" class="l_kwinput" id="key" name="key" value="<?php echo urldecode($keyword);?>"/>
+    <input type="hidden" class="g_kwinput" id="keyword" name="keyword"/>
   <input type="submit" class="g_submit" value="Google搜索"/>
   </div>
   </form>
