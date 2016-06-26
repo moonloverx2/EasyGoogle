@@ -13,9 +13,8 @@
 
     function check()
      {
-          var b = new Base64();  
+        var b = new Base64();  
         var str = b.encode($("#key").val());  
-        alert(str);
         $("#keyword").val(str);
         return true;
         }
@@ -30,7 +29,7 @@
     <div><img class="g_logo" src="Images/logo.png"/></div>
     <form action="Search.php" method="get" onsubmit="return check()">
     <div class="g_serchdiv">
-    <input type="text" class="g_kwinput" id="key" name="key"/>
+    <input type="text" class="g_kwinput" id="key"/>
     <input type="hidden" class="g_kwinput" id="keyword" name="keyword"/>
     <input type="submit" class="g_submit" value="Google搜索"/>
     </div>
